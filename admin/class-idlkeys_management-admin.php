@@ -85,10 +85,10 @@ class Idlkeys_management_Admin {
 		$customer = sanitize_text_field($_POST['customer']);
 
 		if ($customer) {
-			$data = [ 'location' => $_POST['location'], 'employee' => $employee, 'customer' => $customer, 'reminder_date' => '']];
+			$data = [ 'location' => $_POST['location'], 'employee' => $employee, 'customer' => $customer, 'reminder_date' => ''];
 		}
 		else{
-			$data = [ 'location' => $_POST['location'], 'employee' => $employee, 'customer' => $customer]];
+			$data = [ 'location' => $_POST['location'], 'employee' => $employee, 'customer' => $customer];
 		}
 		
 		$where = ['id' => $id];
