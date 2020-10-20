@@ -2,12 +2,10 @@
 class idlkeysmodel
 {
 	private $table;
-	private $reminer_table;
 	
 	public function __construct(){
 		global $wpdb;
 		$this->table = $wpdb->prefix.'idl_keys'; 
-		$this->reminer_table = $wpdb->prefix.'idl_keys_reminder'; 
 	}
 	
 	public function get_all_keys($get){
@@ -45,12 +43,10 @@ class idlkeysmodel
         //echo $wpdb->last_query;
 	}
 
-	public function keys_reminder($data) {
+	public function keys_reminder($data, $where) {
 		global $wpdb;
-		print_r($data);
-		$wpdb->insert($this->reminer_table, $data);
-		return $wpdb->insert_id;
-        echo $wpdb->last_query;
+		$updated = $wpdb->update( $this->table, $data, $where );
+		return $updated;
 	}
 	
 }

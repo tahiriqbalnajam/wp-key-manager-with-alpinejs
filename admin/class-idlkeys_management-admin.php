@@ -83,7 +83,14 @@ class Idlkeys_management_Admin {
 		$location = sanitize_text_field($_POST['location']);
 		$employee = sanitize_text_field($_POST['employee']);
 		$customer = sanitize_text_field($_POST['customer']);
-		$data = [ 'location' => $_POST['location'], 'employee' => $employee, 'customer' => $customer];
+
+		if ($customer) {
+			$data = [ 'location' => $_POST['location'], 'employee' => $employee, 'customer' => $customer, 'reminder_date' => '']];
+		}
+		else{
+			$data = [ 'location' => $_POST['location'], 'employee' => $employee, 'customer' => $customer]];
+		}
+		
 		$where = ['id' => $id];
 		$this->model->update_key($data, $where);
 		exit;
@@ -106,9 +113,11 @@ class Idlkeys_management_Admin {
 	}
 	public function send_cus_mail() {
 		$user_id = sanitize_text_field($_GET['user_id']);
+		$keyid = sanitize_text_field($_GET['keyid']);
 		$date = date("Y/m/d");
-		$data = ['cus_id' => $user_id, 'date' => $color];
-		$keys_reminder = $this->model->keys_reminder($data);
+		$data = ['reminder_date' => $date];
+		$where = ['id' => $keyid];
+		$keys_reminder = $this->model->keys_reminder($data, $where);
 		//$keys_reminder = keys_reminder($user_id);
 		$user_info = get_userdata($user_id);
 		$name = $user_info->first_name.' '.$user_info->last_name;

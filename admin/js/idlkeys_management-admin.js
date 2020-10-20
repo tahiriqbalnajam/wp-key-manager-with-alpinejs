@@ -125,11 +125,11 @@ function handlekeys() {
 			
 		},
 
-		async sendmail(id) {
-			if (!id) {
+		async sendmail(id1,id2) {
+			if (!id1) {
 				return false;
 			}
-			await fetch(this.ajaxURL+"?action=send_cus_mail&user_id="+id, {
+			await fetch(this.ajaxURL+"?action=send_cus_mail&user_id="+id1+"&keyid="+id2, {
 				method: "GET",				
 				headers: { 
 						"Content-type": "application/json; charset=utf-8",

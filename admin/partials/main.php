@@ -48,7 +48,7 @@
               </select>
             </td>
             <td class="hidemail" x-show="hidemail">
-              <a class="button" :disabled="(key.location == 'employee' || key.location == 'office') ? true : false" href="#sendmail" @click="sendmail(key.customer)">Send</a>
+              <a class="button" :disabled="(key.location == 'employee' || key.location == 'office') ? true : false" href="#sendmail" @click="sendmail(key.customer,key.id)">Send</a>
             </td>
             <td class="hidemail" x-show="hidemail"></td>
         </tr>
