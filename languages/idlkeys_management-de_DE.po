@@ -1,0 +1,125 @@
+# Copyright (C) 2017 WPAutoPot
+# This file is distributed under the same license as the WPAutoPot package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WPAutoPot\n"
+"Report-Msgid-Bugs-To: https://AhmadAwais.com/contact/\n"
+"POT-Creation-Date: 2020-10-21 18:00-0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Team Name <your_email@email.com>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
+"_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;"
+"esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class-idlkeys_management-admin.php:23
+msgid "Office"
+msgstr "Verfügbar"
+
+#: admin/class-idlkeys_management-admin.php:23 admin/partials/main.php:15
+msgid "Employee"
+msgstr "Wärter:in"
+
+#: admin/class-idlkeys_management-admin.php:23 admin/partials/main.php:16
+msgid "Customer"
+msgstr "Kunde"
+
+#: admin/class-idlkeys_management-admin.php:24
+msgid "Add Key"
+msgstr "hinzufügen"
+
+#: admin/class-idlkeys_management-admin.php:24
+msgid "Edit Key"
+msgstr "bearbeiten"
+
+#: admin/class-idlkeys_management-admin.php:31
+#: admin/class-idlkeys_management-admin.php:32 admin/partials/main.php:2
+msgid "Keys"
+msgstr "Schlüsselverwaltung"
+
+#: admin/class-idlkeys_management-admin.php:36
+#: admin/class-idlkeys_management-admin.php:37
+#: admin/partials/configuration.php:1
+msgid "Configuration"
+msgstr "E-Mail Vorlage"
+
+#: admin/partials/configuration.php:9
+msgid "Visitor Admin Email"
+msgstr "/ = Zeilenumbruch"
+
+#: admin/partials/main.php:4
+msgid "All Keys"
+msgstr "Alle Schlüssel"
+
+#: admin/partials/main.php:5
+msgid "My Keys"
+msgstr "Mir Zugeteilt"
+
+#: admin/partials/main.php:6
+msgid "Pending"
+msgstr "Anstehende Rückgaben"
+
+#: admin/partials/main.php:7
+msgid "Add New"
+msgstr "Neu Anlegen"
+
+#: admin/partials/main.php:12
+msgid "Title"
+msgstr "Schlüssel"
+
+#: admin/partials/main.php:13
+msgid "Key Color"
+msgstr "Farbe"
+
+#: admin/partials/main.php:14
+msgid "Location"
+msgstr "Zuteilung"
+
+#: admin/partials/main.php:17
+msgid "Mail"
+msgstr "Erinnerung"
+
+#: admin/partials/main.php:19
+msgid "Last Reminder"
+msgstr "Letzte Erinnerung"
+
+#: admin/partials/main.php:53
+msgid "Send"
+msgstr "Senden"
+
+#: admin/partials/main.php:55
+msgid "Reminder not sent"
+msgstr "Erinnerung nicht gesendet"
+
+#: admin/partials/main.php:61
+msgid "Add New Key"
+msgstr "Neuen Schlüssel hinzufügen"
+
+#: admin/partials/main.php:68
+msgid "Title:"
+msgstr "Schlüssel:"
+
+#: admin/partials/main.php:69
+msgid "Enter Key Title:"
+msgstr "Schlüsseltitel eingeben:"
+
+#: admin/partials/main.php:70
+msgid "This is a required field."
+msgstr "Dies ist ein Pflichtfeld."
+
+#: admin/partials/main.php:73
+msgid "Color"
+msgstr "Farbe"
+
+#~ msgid "First String with __()"
+#~ msgstr "oooo"

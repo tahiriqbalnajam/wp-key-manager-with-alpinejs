@@ -9,20 +9,20 @@ function handlekeys() {
 		'hidemail': false,
 		'showpopup': false,
 		'loader': false,
-		'btntext': "Add Key",
+		'btntext': ajax.add_key,
 		'selected_category': '',
 		'locations': [
 						{
 							'value':'customer',
-							'text':'Customer',
+							'text':ajax.customer,
 						},
 						{
 							 'value':'employee', 
-							 'text':'Employee',
+							 'text':ajax.employee,
 						},
 						{
 							 'value':'office', 
-							 'text':'At office',
+							 'text':ajax.office,
 						}
 					],
 		'employees': [],
@@ -151,7 +151,7 @@ function handlekeys() {
 			this.keys.map(key => {
 				if(key.id == id) {
 					this.showPopup();
-					this.btntext="Edit Key";
+					this.btntext= ajax.edit_key;
 					this.addkey.id = key.id;
 					this.addkey.title = key.title;
 					this.addkey.color = key.key_color;
@@ -163,7 +163,7 @@ function handlekeys() {
 			this.addkey.id = '';
 			this.addkey.title = '';
 			this.addkey.color = '';
-			this.btntext="Add Key";
+			this.btntext= ajax.add_key;
 			this.showpopup = true;
 		},
 		async addKeyFunc() {

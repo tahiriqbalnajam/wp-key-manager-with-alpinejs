@@ -36,7 +36,11 @@ class Idlkeys_management_Activator {
 				 PRIMARY KEY (`id`)
 				) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;";
 
+		$update_tbl_floor ="ALTER TABLE `".$wpdb->prefix."idl_keys`
+					ADD `reminder_date` DATE NOT NULL";
+					
 		$wpdb->query($tbl_floor);
+		$wpdb->query($update_tbl_floor);
 
 	}
 

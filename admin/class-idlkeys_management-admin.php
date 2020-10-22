@@ -20,24 +20,22 @@ class Idlkeys_management_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/idlkeys_management-admin.js', array( 'jquery' ), $this->version, false );
 
 		wp_enqueue_script( $this->plugin_name.'-alpine',"https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js", array(), $this->version, false );
-		wp_localize_script($this->plugin_name, 'ajax' , array( 'url' => admin_url( 'admin-ajax.php')) );
+		wp_localize_script($this->plugin_name, 'ajax' , array( 'url' => admin_url( 'admin-ajax.php'),'office' => __("Office", $this->plugin_name ),'employee' => __("Employee", $this->plugin_name ),'customer' => __("Customer", $this->plugin_name )
+			,'add_key' => __("Add Key", $this->plugin_name ),'edit_key' => __("Edit Key", $this->plugin_name )) );
 		wp_enqueue_script( $this->plugin_name.'jscolor', plugin_dir_url( __FILE__ ) . 'js/jscolor.js', array( 'jquery' ), $this->version, false );
 	}
 
 	public function idl_key_manage_menu()
 	{
 		if (function_exists('add_menu_page')) {
-			add_menu_page(__('Keys', 'idlkeysmange_managepage'),
-				__('Keys', 'idlkeysmange_manage'), 'manage_options', 'idlkeysmange_managepage',
+			add_menu_page(__('Keys', $this->plugin_name),
+				__('Keys', $this->plugin_name), 'manage_options', 'idlkeysmange_managepage',
 				array($this, 'idlkeysmange_managemnent'), 'dashicons-backup');
 		}
 		if (function_exists('add_submenu_page')) {
-			add_submenu_page('idlkeysmange_managepage', __('Configuration', 'idlkeysmange_managepage   '),
-				__('Configuration', 'idlkeysmange_managepage'), 'manage_options', 'configuration_page',
+			add_submenu_page('idlkeysmange_managepage', __('Configuration', $this->plugin_name),
+				__('Configuration', $this->plugin_name), 'manage_options', 'configuration_page',
 				array($this, 'configuration_menu'));
-			/*add_submenu_page('idlkeysmange_managepage', __('Pending Returns', 'idlkeysmange_managepage'),
-				__('Pending Returns', 'idlkeysmange_managepage'), 'manage_options', 'pendingreturns_page',
-				array($this, 'pendingreturns_menu'));*/
 		}
 	}
 
@@ -68,7 +66,7 @@ class Idlkeys_management_Admin {
 			$allcustomers[$key]['id'] = $value->ID;
 			$allcustomers[$key]['name'] = $value->display_name;
 		}
-		$employees = get_users( [ 'role__in' => [ 'donation_employee'] ] );
+		$employees = get_users( [ 'role__in' => [ 'employee'] ] );
 		$allemployees = array();
 		foreach ($employees as $key => $value) {
 			$allemployees[$key]['id'] = $value->ID;
@@ -106,7 +104,7 @@ class Idlkeys_management_Admin {
 			$this->model->update_key($data, $where);
 		}
 		else {
-			$data = ['title' => $title, 'key_color' => $color, 'location' => 'office', 'employee' => '', 'customer' => ''];
+			$data = ['title' => $title, 'key_color' => $color, 'location' => 'office', 'employee' => '', 'customer' => '' , 'reminder_date' => ''];
 			return $this->model->addkey($data);
 		}
 		exit;
